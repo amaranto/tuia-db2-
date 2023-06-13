@@ -8,7 +8,7 @@
       DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=DW;Persist Security Info=True;Application Name=&quot;SSIS-Integration Services Project1-{E1035BC8-020E-4E74-A4DA-EFD5A1458E83}localhost.DW.sa&quot;;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAOmzEO/DlwUybFqZbYg9BuwAAAAACAAAAAAAQZgAAAAEAACAAAADGBASxpeuC2dcpWGRYe6+YsgHBl3LnV3UpHvEesqLrFQAAAAAOgAAAAAIAACAAAAD/Rbm4IkO40lVPyesMh/MhvKVwpcK/QIcNbKE/4fCaNYAAAAAtl/6ysHB8LgIsfp683uj5dVl9Uw+MjaGAdpDqhm2MrurZoy750NM6W4a2YsteNqeb2BejkJAYtuS92OuGheCOsUj3/Xz7YOfOw9YA6Bwyj6FXewDYeeUTDNPulZkwlerB02SBI1JsRfFfEQtpb+PjctJUhYAUBY11oDflRKGk/UAAAAAgp0snW0/NAGKyP0K480PpeoYMuU3SiajqGnQG3ufhX5bodD89jGH7yDxktvLa9JyBXAAn00zUCq0eFQgZN5Xd</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8gEt52+ns0OBj83wQD6m0gAAAAACAAAAAAAQZgAAAAEAACAAAAC0rw1u7D5sp75t4vrhwmT7qgUp04Wr+yKHt+6zJqsSWgAAAAAOgAAAAAIAACAAAAB+za/6g6lirerU99qrf55uPgOnjmmRHwGqewsZOGRJ3IAAAAANwNoOcc0rRUfwIHwf/avf1Qy1nDbSkMgHbB+IAA6mbl4Wo/Eruy/3jKYx3Bsa9JnASYGKjfHuMjgEXF4mCJupVFvUdw/j4it7XIvrhfYpNV0vZwirKfoAIlTvlIqaE0XOogRO7qOqA2VPW3ercC5EZy+S8S8SUs/DSccXicBPh0AAAAAbykEIWYcKUDRHYZ3gdKqbJh+xGoTOTkwDQy2O7nwTlKLQYg0so2vpLSyhh0x0XmWtEBLq7TqTwjTr/2I12bvR</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

@@ -1,0 +1,100 @@
+
+CREATE TABLE DIM_Fecha_Y_Cotizacion (
+    ID_FECHA numeric(20,0),
+    FECHA date,
+    ANO int,
+    MES int,
+    DOLAR_COMPRA real,
+    DOLAR_VENTA real,
+    CONSTRAINT PK_DIM_Fecha_Y_Cortizacion PRIMARY KEY (ID_Fecha)
+)
+
+CREATE TABLE DIM_Articulos (
+    CODIGO_PRODUCTO nvarchar(255),
+    NOMBRE nvarchar(255),
+    FAMILIA nvarchar(255),
+    PRECIO_UNITARIO int,
+    COSTO_UNITARIO int,
+    CONSTRAINT PK_DIM_Articulos PRIMARY KEY (CODIGO_PRODUCTO)
+)
+
+CREATE TABLE DIM_Vendedores(
+	ID_VENDEDOR smallint NOT NULL,
+	NOMBRE nvarchar(255) NULL,
+	APELLIDO nvarchar(255) NULL,
+	TIPO_CAPACITACION nvarchar(255) NULL,
+	HORAS_CAPACITACION smallint NULL,
+    CONSTRAINT PK_DIM_Vendedores PRIMARY KEY (ID_VENDEDOR) 
+ )
+
+ CREATE TABLE DIM_Sucursal(
+	SUCURSAL_ID smallint NOT NULL,
+	NOMBRE_SUCURSAL nvarchar(255) NULL,
+	COMUNA_ID smallint NULL,
+	COMUNA_NOMBRE nvarchar(255) NULL,
+	PROVINCIA_ID smallint NULL,
+	PROVINCIA_NOMBRE nvarchar(255) NULL,
+	REGION nvarchar(255) NULL,
+	REGION_ID smallint NULL,
+ CONSTRAINT PK_DIM_Sucursal PRIMARY KEY (SUCURSAL_ID) 
+)
+
+CREATE TABLE DIM_Clientes(
+	NRO smallint NULL,
+	ID_CLIENTE nvarchar(255) NOT NULL,
+	NOMBRE nvarchar(255) NULL,
+	APELLIDO nvarchar(255) NULL,
+	EDAD smallint NULL,
+	ESTADO_CIVIL nvarchar(255) NULL,
+	RESIDENCIA nvarchar(255) NULL,
+	ORIGEN nvarchar(255) NULL,
+ CONSTRAINT PK_DIM_Clientes PRIMARY KEY (ID_CLIENTE) 
+)
+
+CREATE TABLE FACT_VENTAS (
+    DOCUMENTO nvarchar(255),
+    CODIGO_PRODUCTO nvarchar(255) FOREIGN KEY REFERENCES DIM_Articulos(CODIGO_PRODUCTO),
+    FECHA numeric(20,0) FOREIGN KEY REFERENCES DIM_Fecha_Y_Cotizacion(ID_Fecha),
+    SUCURSAL_ID smallint FOREIGN KEY REFERENCES DIM_Sucursal(SUCURSAL_ID),
+    ID_CLIENTE nvarchar(255) FOREIGN KEY REFERENCES DIM_Clientes(ID_Cliente),
+    ID_VENDEDOR smallint FOREIGN KEY REFERENCES DIM_Vendedores(ID_Vendedor),
+    TIPO_DOCUMENTO nvarchar(255),
+    DOLAR_COMPRA real,
+    DOLAR_VENTA real,    
+    CANTIDAD_DETALLE int,
+    PRECIO_UNITARIO_DETALLE int,
+    PRECIO_UNITARIO_DETALLE_USD real,
+    TOTAL_DETALLE int,
+    TOTAL_DETALLE_USD int,
+    TOTAL_NETO_VENTA int,
+    TOTAL_NETO_VENTA_USD real,
+    IMPUESTO int,
+    TOTAL_DOCUMENTO_VENTA int,
+    TOTAL_DOCUMENTO_VENTA_USD real,
+    CONSTRAINT PK_FACT_VENTAS PRIMARY KEY (DOCUMENTO, CODIGO_PRODUCTO)
+)
+
+CREATE TABLE "FACT_Ventas" (
+    "DOCUMENTO" nvarchar(255),
+    "PRECIO_UNITARIO_DETALLE" int,
+    "CANTIDAD_DETALLE" int,
+    "TOTAL_DETALLE" int,
+    "ID_CLIENTE" nvarchar(255),
+    "TIPO_DOCUMENTO" nvarchar(255),
+    "ID_VENDEDOR" smallint,
+    "TOTAL_NETO_VENTA" int,
+    "IMPUESTO" int,
+    "TOTAL_DOCUMENTO_VENTA" int,
+    "SUCURSAL_ID" smallint,
+    "CODIGO_PRODUCTO" nvarchar(255),
+    "FECHA" date,
+    "ANO" int,
+    "MES" int,
+    "DOLAR_COMPRA" real,
+    "DOLAR_VENTA" real,
+    "ID_FECHA" numeric(20,0),
+    "PRECIO_UNITARIO_DETALLE_USD" real,
+    "TOTAL_DETALLE_USD" real,
+    "TOTAL_NETO_VENTA_USD" real,
+    "TOTAL_DOCUMENTO_VENTA_USD" real
+)
